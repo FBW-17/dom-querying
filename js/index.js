@@ -64,11 +64,14 @@ allergyList.style.width = "20rem";
 allergyList.style.listStyle = "none";
 allergyList.style.marginTop = "1rem";
 
-// Easy solution with pseudo-class :nth-child
-// const allergyItems = document.querySelectorAll(".allergy-info:nth-child(2n)");
-// allergyItems.forEach((item) => {
-//     item.style.backgroundColor = "skyblue";
-// })
+/* Easy solution with pseudo-class :nth-child
+
+const allergyItems = document.querySelectorAll(".allergy-info:nth-child(2n)");
+allergyItems.forEach((item) => {
+    item.style.backgroundColor = "skyblue";
+})
+
+*/
 
 // Another solution
 const allergyItems = document.querySelectorAll(".allergy-info");
