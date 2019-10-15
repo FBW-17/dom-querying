@@ -14,19 +14,20 @@ mainSection.style.justifyContent = "space-around"
 //change styling of h2 elements
 const menuCategories = document.querySelectorAll(".category");
 menuCategories.forEach(({ style: category }) => {
-    category.fontStyle = "italic";
+    category.fontStyle = "italic"
     category.fontSize = "2rem";
     category.borderBottom = "1px solid black";
 });
+console.log(menuCategories);
 
 //change font size of warning at bottom of page
-let warning = document.getElementById("warning");
+let warning = document.querySelector("#warning");
 warning.style.fontSize = "2rem";
 warning.style.marginBottom = "0";
 warning.style.marginLeft = "1.5rem";
 
 //color generator
-function colorGenerator() {
+colorGenerator = () => {
     let letters = "0123456789ABCDEF";
     let randomColor = "#";
     for (let j = 0; j < 6; j++) {
@@ -38,14 +39,11 @@ function colorGenerator() {
 
 //assigning a random color to each list item
 const foodCategories = document.querySelectorAll(".food-category");
-
-foodCategories.forEach(({ style: categoryBox }) => {
-    categoryBox.backgroundColor = colorGenerator();
-    categoryBox.width = "30%";
-    categoryBox.height = "10rem";
-    categoryBox.textAlign = "center";
-    categoryBox.padding = "1rem";
-    categoryBox.borderRadius = "5px";
+foodCategories.forEach(({ style: category }) => {
+    category.backgroundColor = colorGenerator();
+    category.width = "20rem";
+    category.height = "10rem";
+    category.margin = "1rem";
 });
 
 const foodItems = document.querySelectorAll(".food-item");
@@ -66,6 +64,13 @@ allergyList.style.width = "20rem";
 allergyList.style.listStyle = "none";
 allergyList.style.marginTop = "1rem";
 
+// Easy solution with pseudo-class :nth-child
+// const allergyItems = document.querySelectorAll(".allergy-info:nth-child(2n)");
+// allergyItems.forEach((item) => {
+//     item.style.backgroundColor = "skyblue";
+// })
+
+// Another solution
 const allergyItems = document.querySelectorAll(".allergy-info");
 allergyItems.forEach(({ style: item }, i) => {
     if (i % 2 === 1) {
@@ -82,8 +87,7 @@ footer.style.flexFlow = "row wrap";
 footer.style.justifyContent = "center";
 
 const description = document.querySelectorAll(".food-desc");
-description.forEach(footerDesc => {
-    let desc = footerDesc.style;
+description.forEach(({ style: desc }) => {
     desc.border = "5px solid orange";
     desc.borderRadius = "100%";
     desc.height = "7rem";
@@ -92,4 +96,5 @@ description.forEach(footerDesc => {
     desc.justifyContent = "center";
     desc.alignItems = "center";
     desc.margin = "1rem";
-});
+})
+
